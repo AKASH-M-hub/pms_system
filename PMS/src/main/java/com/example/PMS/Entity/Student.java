@@ -3,24 +3,27 @@ package com.example.PMS.Entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "admin")
-public class Admin {
+@Table(name = "student")
+public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long adminId;
+    private Long studentId;
 
     private String name;
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String email;
 
     private String password;
-    private String role; // ADMIN
+    private String dept;
+    private double cgpa;
+    private String skills;
+    private String role; // STUDENT
 
     // getters & setters
-    public Long getAdminId() { return adminId; }
-    public void setAdminId(Long adminId) { this.adminId = adminId; }
+    public Long getStudentId() { return studentId; }
+    public void setStudentId(Long studentId) { this.studentId = studentId; }
 
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
@@ -30,6 +33,15 @@ public class Admin {
 
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
+
+    public String getDept() { return dept; }
+    public void setDept(String dept) { this.dept = dept; }
+
+    public double getCgpa() { return cgpa; }
+    public void setCgpa(double cgpa) { this.cgpa = cgpa; }
+
+    public String getSkills() { return skills; }
+    public void setSkills(String skills) { this.skills = skills; }
 
     public String getRole() { return role; }
     public void setRole(String role) { this.role = role; }
